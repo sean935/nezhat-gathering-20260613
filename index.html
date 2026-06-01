@@ -1,99 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>You Are Cordially Invited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
 
-  .ew { max-width: 620px; margin: 0 auto; padding: 2rem 1rem; font-family: 'Jost', sans-serif; }
-  .ec { border: 0.5px solid #d9c4b0; border-radius: 4px; overflow: hidden; background: #fdf9f5; }
+    body {
+      background: #f5ede6;
+      font-family: 'Jost', sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  .eh { background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; }
-  .eo { font-family: 'Cormorant Garamond', serif; color: rgba(255,220,190,0.7); font-size: 20px; letter-spacing: 10px; margin-bottom: 1rem; display: block; }
-  .et { font-family: 'Jost', sans-serif; color: #f5ddd0; font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 0.25rem; }
-  .eb { font-family: 'Cormorant Garamond', serif; color: #f5ddd0; font-size: 14px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 0.5rem; font-style: italic; }
-  .ehst { font-family: 'Cormorant Garamond', serif; color: #fff5ee; font-size: 40px; font-weight: 300; font-style: italic; margin: 0 0 0.4rem; line-height: 1.2; }
-  .etn { font-family: 'Cormorant Garamond', serif; color: #f5ddd0; font-size: 14px; font-weight: 300; font-style: italic; letter-spacing: 2px; margin: 0; }
+    .ew {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
 
-  .ebody { padding: 2.5rem; background: #fdf9f5; }
-  .ediv { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
-  .edivl { flex: 1; height: 0.5px; background: #d9c4b0; }
-  .edivd { width: 6px; height: 6px; border-radius: 50%; background: #C0627A; }
+    .ec {
+      border: 0.5px solid #d9c4b0;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fdf9f5;
+    }
 
-  .edet { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
-  .db { display: flex; flex-direction: column; gap: 4px; }
-  .dl { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C0627A; font-weight: 500; }
-  .dv { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: #2a1515; line-height: 1.4; }
-  .dv a { color: #8B3A62; text-decoration: none; border-bottom: 0.5px solid #C0627A; }
+    /* HEADER */
+    .eh {
+      background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%);
+      padding: 2.5rem 1.75rem 2rem;
+      text-align: center;
+    }
 
-  .emsg { background: #faf0ea; border-left: 2px solid #C0627A; padding: 1rem 1.25rem; margin-bottom: 1.75rem; border-radius: 0 4px 4px 0; }
-  .emsg p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: #2a1515; margin: 0; line-height: 1.7; font-weight: 400; }
+    .eo {
+      font-family: 'Cormorant Garamond', serif;
+      color: rgba(255,220,190,0.7);
+      font-size: 18px;
+      letter-spacing: 10px;
+      margin-bottom: 1rem;
+      display: block;
+    }
 
-  .calsec { margin-bottom: 2rem; }
-  .callbl { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C0627A; font-weight: 500; margin-bottom: 10px; display: block; }
-  .calrow { display: flex; gap: 8px; }
-  .cbtn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 8px; border: 1px solid #8B3A62 !important; border-radius: 3px; background-color: #ffffff !important; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #8B3A62 !important; cursor: pointer; font-weight: 500; text-decoration: none; }
-  .cbtn:hover { background-color: #8B3A62 !important; color: #fff5ee !important; }
+    .et {
+      font-family: 'Jost', sans-serif;
+      color: #f5ddd0;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0 0 0.25rem;
+    }
 
-  .rsec { border: 1px solid #8B3A62; border-radius: 4px; padding: 1.75rem; background-color: #ffffff !important; }
-  .rtitle { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 400; color: #2a1515 !important; margin: 0 0 1.5rem; text-align: center; }
+    .eb {
+      font-family: 'Cormorant Garamond', serif;
+      color: #f5ddd0;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 0.5rem;
+      font-style: italic;
+    }
 
-  .frow { margin-bottom: 1.1rem; }
-  .frow label { display: block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; margin-bottom: 7px; font-weight: 500; }
+    .ehst {
+      font-family: 'Cormorant Garamond', serif;
+      color: #fff5ee;
+      font-size: clamp(30px, 8vw, 42px);
+      font-weight: 300;
+      font-style: italic;
+      margin: 0 0 0.4rem;
+      line-height: 1.2;
+    }
 
-  .finput {
-    display: block !important; width: 100% !important; border: 1px solid #c9a0a8 !important;
-    border-radius: 3px !important; padding: 11px 13px !important; font-family: 'Jost', sans-serif !important;
-    font-size: 14px !important; font-weight: 400 !important; color: #2a1515 !important;
-    background-color: #ffffff !important; outline: none !important;
-    -webkit-appearance: none !important; appearance: none !important; box-shadow: none !important;
-  }
-  .finput::placeholder { color: #a07878 !important; font-weight: 300 !important; }
-  .finput:focus { border-color: #8B3A62 !important; }
+    .etn {
+      font-family: 'Cormorant Garamond', serif;
+      color: #f5ddd0;
+      font-size: 13px;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
 
-  .arow { display: flex; gap: 10px; margin-bottom: 0; }
-  .abtn {
-    flex: 1 !important; padding: 13px 8px !important; border: none !important; border-radius: 3px !important;
-    font-family: 'Jost', sans-serif !important; font-size: 11px !important; letter-spacing: 2px !important;
-    text-transform: uppercase !important; cursor: pointer !important; font-weight: 500 !important;
-    background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%) !important;
-    color: #fff5ee !important; opacity: 0.5; transition: opacity 0.15s;
-  }
-  .abtn:hover { opacity: 0.75 !important; }
-  .abtn.active { opacity: 1 !important; outline: 3px solid #8B3A62 !important; outline-offset: 2px !important; }
+    /* BODY */
+    .ebody {
+      padding: 2rem 1.5rem;
+      background: #fdf9f5;
+    }
 
-  .gsec { display: none; margin-top: 1.25rem; border-top: 0.5px solid #e8d0d5; padding-top: 1.25rem; }
+    @media (max-width: 480px) {
+      .ebody { padding: 1.5rem 1.1rem; }
+    }
 
-  .gsec-title { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; font-weight: 500; margin-bottom: 1rem; display: block; }
+    .ediv {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.75rem;
+    }
 
-  .guest-count-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
-  .guest-count-row label { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; font-weight: 500; white-space: nowrap; }
-  .gcselect {
-    flex: 1; border: 1px solid #c9a0a8 !important; border-radius: 3px !important;
-    padding: 10px 13px !important; font-family: 'Jost', sans-serif !important;
-    font-size: 14px !important; color: #2a1515 !important; background-color: #ffffff !important;
-    outline: none !important; -webkit-appearance: none !important; appearance: none !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B3A62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important; background-position: right 12px center !important; padding-right: 32px !important;
-  }
+    .edivl { flex: 1; height: 0.5px; background: #d9c4b0; }
+    .edivd { width: 6px; height: 6px; border-radius: 50%; background: #C0627A; flex-shrink: 0; }
 
-  .guest-fields { display: flex; flex-direction: column; gap: 8px; }
-  .guest-field-row { display: flex; align-items: center; gap: 10px; }
-  .guest-num { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #C0627A; font-weight: 400; min-width: 20px; text-align: right; flex-shrink: 0; }
+    /* DETAILS GRID */
+    .edet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
 
-  .subbtn {
-    display: block !important; width: 100% !important; padding: 13px !important;
-    background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%) !important;
-    color: #fff5ee !important; border: none !important; border-radius: 3px !important;
-    font-family: 'Jost', sans-serif !important; font-size: 12px !important; letter-spacing: 4px !important;
-    text-transform: uppercase !important; cursor: pointer !important; font-weight: 500 !important; margin-top: 1.25rem !important;
-  }
-  .subbtn:hover { opacity: 0.85 !important; }
+    @media (max-width: 360px) {
+      .edet { grid-template-columns: 1fr; gap: 1rem; }
+    }
 
-  .efooter { text-align: center; padding: 1.25rem 2.5rem; border-top: 0.5px solid #d9c4b0; background: #faf0ea; }
-  .efooter p { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6a3040 !important; margin: 0; font-weight: 400; }
+    .db { display: flex; flex-direction: column; gap: 4px; }
 
-  .sucmsg { display: none; text-align: center; padding: 1.5rem 1rem; }
-  .sucmsg p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: #8B3A62 !important; font-weight: 400; line-height: 1.5; }
-</style>
+    .dl {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C0627A;
+      font-weight: 500;
+    }
+
+    .dv {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: #2a1515;
+      line-height: 1.4;
+    }
+
+    .dv a { color: #8B3A62; text-decoration: none; border-bottom: 0.5px solid #C0627A; }
+
+    /* MESSAGE */
+    .emsg {
+      background: #faf0ea;
+      border-left: 2px solid #C0627A;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .emsg p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: #2a1515;
+      margin: 0;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* CALENDAR */
+    .calsec { margin-bottom: 1.75rem; }
+
+    .callbl {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C0627A;
+      font-weight: 500;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .calrow { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .cbtn {
+      flex: 1;
+      min-width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 8px;
+      border: 1px solid #8B3A62;
+      border-radius: 3px;
+      background-color: #ffffff;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #8B3A62;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cbtn:hover, .cbtn:active { background-color: #8B3A62; color: #fff5ee; }
+    .cbtn:hover svg, .cbtn:active svg { stroke: #fff5ee; }
+
+    /* RSVP SECTION */
+    .rsec {
+      border: 1px solid #8B3A62;
+      border-radius: 4px;
+      padding: 1.5rem;
+      background-color: #ffffff;
+    }
+
+    .rtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 400;
+      color: #2a1515;
+      margin: 0 0 1.5rem;
+      text-align: center;
+    }
+
+    .frow { margin-bottom: 1.1rem; }
+
+    .frow label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8B3A62;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+
+    .finput {
+      display: block;
+      width: 100%;
+      border: 1px solid #c9a0a8;
+      border-radius: 3px;
+      padding: 12px 13px;
+      font-family: 'Jost', sans-serif;
+      font-size: 16px; /* 16px prevents iOS zoom on focus */
+      font-weight: 400;
+      color: #2a1515;
+      background-color: #ffffff;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      box-shadow: none;
+    }
+
+    .finput::placeholder { color: #a07878; font-weight: 300; }
+    .finput:focus { border-color: #8B3A62; }
+
+    /* ATTEND BUTTONS */
+    .arow { display: flex; gap: 10px; margin-bottom: 0; }
+
+    .abtn {
+      flex: 1;
+      padding: 14px 8px;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%);
+      color: #fff5ee;
+      opacity: 0.5;
+      transition: opacity 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (max-width: 400px) {
+      .arow { flex-direction: column; }
+      .abtn { font-size: 10px; letter-spacing: 1.5px; }
+    }
+
+    .abtn:hover { opacity: 0.75; }
+    .abtn.active { opacity: 1; outline: 3px solid #8B3A62; outline-offset: 2px; }
+
+    /* GUEST SECTION */
+    .gsec {
+      display: none;
+      margin-top: 1.25rem;
+      border-top: 0.5px solid #e8d0d5;
+      padding-top: 1.25rem;
+    }
+
+    .gsec-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8B3A62;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .guest-count-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .guest-count-row label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8B3A62;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .gcselect {
+      flex: 1;
+      min-width: 140px;
+      border: 1px solid #c9a0a8;
+      border-radius: 3px;
+      padding: 11px 32px 11px 13px;
+      font-family: 'Jost', sans-serif;
+      font-size: 16px; /* prevents iOS zoom */
+      color: #2a1515;
+      background-color: #ffffff;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B3A62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+
+    .guest-fields { display: flex; flex-direction: column; gap: 8px; }
+
+    .guest-field-row { display: flex; align-items: center; gap: 10px; }
+
+    .guest-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      color: #C0627A;
+      font-weight: 400;
+      min-width: 20px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* SUBMIT BUTTON */
+    .subbtn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%);
+      color: #fff5ee;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: 1.25rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .subbtn:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    .efooter {
+      text-align: center;
+      padding: 1.1rem 1.5rem;
+      border-top: 0.5px solid #d9c4b0;
+      background: #faf0ea;
+    }
+
+    .efooter p {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6a3040;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* SUCCESS */
+    .sucmsg { display: none; text-align: center; padding: 1.5rem 1rem; }
+
+    .sucmsg p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: #8B3A62;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
 
 <div class="ew"><div class="ec">
 
@@ -141,7 +453,7 @@
 
         <div class="frow">
           <label for="fname">Your name</label>
-          <input class="finput" type="text" id="fname" placeholder="Full name" />
+          <input class="finput" type="text" id="fname" placeholder="Full name" autocomplete="name" />
         </div>
 
         <div class="frow">
@@ -185,6 +497,15 @@
 </div></div>
 
 <script>
+  // Tell Google Sites iframe to resize to fit full content height
+  function notifyHeight() {
+    const h = document.body.scrollHeight;
+    window.parent.postMessage({ type: 'setHeight', height: h }, '*');
+  }
+  window.addEventListener('load', notifyHeight);
+  window.addEventListener('resize', notifyHeight);
+  new MutationObserver(notifyHeight).observe(document.body, { subtree: true, childList: true, attributes: true });
+
   let attending = null;
 
   function selectAttend(val) {
@@ -196,6 +517,7 @@
       document.getElementById('gcount').value = '';
       document.getElementById('guest-fields').innerHTML = '';
     }
+    setTimeout(notifyHeight, 100);
   }
 
   function updateGuestFields() {
@@ -207,9 +529,10 @@
       row.className = 'guest-field-row';
       row.innerHTML =
         '<span class="guest-num">' + i + '.</span>' +
-        '<input class="finput" type="text" id="guest_' + i + '" placeholder="Guest ' + i + ' full name" style="flex:1;" />';
+        '<input class="finput" type="text" id="guest_' + i + '" placeholder="Guest ' + i + ' full name" style="flex:1;" autocomplete="off" />';
       container.appendChild(row);
     }
+    setTimeout(notifyHeight, 100);
   }
 
   function submitRSVP() {
@@ -231,43 +554,46 @@
 
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9Pkib8S5p3crPMQSSut80Q5hiwjLjv8PLLA-1grzMoLEneRD3nJgtLILXrJMXy6O1/exec';
 
-    const submission = {
-      timestamp: new Date().toISOString(),
-      primaryName: name,
-      attending: attending,
-      guestCount: guestNames.length,
-      guests: guestNames
-    };
-
     fetch(APPS_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(submission)
+      body: JSON.stringify({
+        timestamp: new Date().toISOString(),
+        primaryName: name,
+        attending: attending,
+        guestCount: guestNames.length,
+        guests: guestNames
+      })
     }).catch(function(err) { console.error('RSVP send error:', err); });
 
     document.getElementById('rsvp-form').style.display = 'none';
     document.getElementById('sucmsg').style.display = 'block';
-    const txt = attending === 'yes'
+    document.getElementById('suctext').textContent = attending === 'yes'
       ? 'Thank you, ' + name + '! We look forward to celebrating with you on June 13.'
       : 'Thank you for letting us know, ' + name + '. You will be missed.';
-    document.getElementById('suctext').textContent = txt;
+    setTimeout(notifyHeight, 100);
   }
 
   function addToGoogle(e) {
     e.preventDefault();
     window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dinner+Gathering+hosted+by+Dr.+Camran+Nezhat&dates=20260613T153000/20260613T203000&details=An+afternoon+gathering+of+family+%26+friends.+Persian+food+and+warm+company.&location=240+Mountain+Wood+Ln,+Woodside,+CA+94062','_blank');
   }
+
   function addToiCal(e) {
     e.preventDefault();
     const ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:20260613T153000\r\nDTEND:20260613T203000\r\nSUMMARY:Dinner Gathering hosted by Dr. Camran Nezhat\r\nDESCRIPTION:An afternoon gathering of family & friends.\r\nLOCATION:240 Mountain Wood Ln\\, Woodside\\, CA 94062\r\nEND:VEVENT\r\nEND:VCALENDAR';
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
     a.download = 'nezhat-dinner-june13.ics';
     a.click();
   }
+
   function addToOutlook(e) {
     e.preventDefault();
     window.open('https://outlook.live.com/calendar/0/deeplink/compose?subject=Dinner+Gathering+hosted+by+Dr.+Camran+Nezhat&startdt=2026-06-13T15:30:00&enddt=2026-06-13T20:30:00&body=An+afternoon+gathering+of+family+%26+friends.&location=240+Mountain+Wood+Ln,+Woodside,+CA+94062','_blank');
   }
 </script>
+
+</body>
+</html>
