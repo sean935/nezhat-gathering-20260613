@@ -158,6 +158,7 @@
             <label for="gcount">How many guests total?</label>
             <select class="gcselect" id="gcount" onchange="updateGuestFields()">
               <option value="">Select</option>
+              <option value="0">Just me (no additional guests)</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -218,8 +219,9 @@
 
     let guestNames = [];
     if (attending === 'yes') {
-      const count = parseInt(document.getElementById('gcount').value) || 0;
-      if (!count) { alert('Please select the number of guests.'); return; }
+      const gcVal = document.getElementById('gcount').value;
+      if (gcVal === '') { alert('Please select the number of guests.'); return; }
+      const count = parseInt(gcVal) || 0;
       for (let i = 1; i <= count; i++) {
         const val = document.getElementById('guest_' + i).value.trim();
         if (!val) { alert('Please enter the name for guest ' + i + '.'); return; }
