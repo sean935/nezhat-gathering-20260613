@@ -1,0 +1,271 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .ew { max-width: 620px; margin: 0 auto; padding: 2rem 1rem; font-family: 'Jost', sans-serif; }
+  .ec { border: 0.5px solid #d9c4b0; border-radius: 4px; overflow: hidden; background: #fdf9f5; }
+
+  .eh { background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; }
+  .eo { font-family: 'Cormorant Garamond', serif; color: rgba(255,220,190,0.7); font-size: 20px; letter-spacing: 10px; margin-bottom: 1rem; display: block; }
+  .et { font-family: 'Jost', sans-serif; color: #f5ddd0; font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 0.25rem; }
+  .eb { font-family: 'Cormorant Garamond', serif; color: #f5ddd0; font-size: 14px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 0.5rem; font-style: italic; }
+  .ehst { font-family: 'Cormorant Garamond', serif; color: #fff5ee; font-size: 40px; font-weight: 300; font-style: italic; margin: 0 0 0.4rem; line-height: 1.2; }
+  .etn { font-family: 'Cormorant Garamond', serif; color: #f5ddd0; font-size: 14px; font-weight: 300; font-style: italic; letter-spacing: 2px; margin: 0; }
+
+  .ebody { padding: 2.5rem; background: #fdf9f5; }
+  .ediv { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
+  .edivl { flex: 1; height: 0.5px; background: #d9c4b0; }
+  .edivd { width: 6px; height: 6px; border-radius: 50%; background: #C0627A; }
+
+  .edet { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .db { display: flex; flex-direction: column; gap: 4px; }
+  .dl { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C0627A; font-weight: 500; }
+  .dv { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: #2a1515; line-height: 1.4; }
+  .dv a { color: #8B3A62; text-decoration: none; border-bottom: 0.5px solid #C0627A; }
+
+  .emsg { background: #faf0ea; border-left: 2px solid #C0627A; padding: 1rem 1.25rem; margin-bottom: 1.75rem; border-radius: 0 4px 4px 0; }
+  .emsg p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: #2a1515; margin: 0; line-height: 1.7; font-weight: 400; }
+
+  .calsec { margin-bottom: 2rem; }
+  .callbl { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C0627A; font-weight: 500; margin-bottom: 10px; display: block; }
+  .calrow { display: flex; gap: 8px; }
+  .cbtn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 8px; border: 1px solid #8B3A62 !important; border-radius: 3px; background-color: #ffffff !important; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #8B3A62 !important; cursor: pointer; font-weight: 500; text-decoration: none; }
+  .cbtn:hover { background-color: #8B3A62 !important; color: #fff5ee !important; }
+
+  .rsec { border: 1px solid #8B3A62; border-radius: 4px; padding: 1.75rem; background-color: #ffffff !important; }
+  .rtitle { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 400; color: #2a1515 !important; margin: 0 0 1.5rem; text-align: center; }
+
+  .frow { margin-bottom: 1.1rem; }
+  .frow label { display: block; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; margin-bottom: 7px; font-weight: 500; }
+
+  .finput {
+    display: block !important; width: 100% !important; border: 1px solid #c9a0a8 !important;
+    border-radius: 3px !important; padding: 11px 13px !important; font-family: 'Jost', sans-serif !important;
+    font-size: 14px !important; font-weight: 400 !important; color: #2a1515 !important;
+    background-color: #ffffff !important; outline: none !important;
+    -webkit-appearance: none !important; appearance: none !important; box-shadow: none !important;
+  }
+  .finput::placeholder { color: #a07878 !important; font-weight: 300 !important; }
+  .finput:focus { border-color: #8B3A62 !important; }
+
+  .arow { display: flex; gap: 10px; margin-bottom: 0; }
+  .abtn {
+    flex: 1 !important; padding: 13px 8px !important; border: none !important; border-radius: 3px !important;
+    font-family: 'Jost', sans-serif !important; font-size: 11px !important; letter-spacing: 2px !important;
+    text-transform: uppercase !important; cursor: pointer !important; font-weight: 500 !important;
+    background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%) !important;
+    color: #fff5ee !important; opacity: 0.5; transition: opacity 0.15s;
+  }
+  .abtn:hover { opacity: 0.75 !important; }
+  .abtn.active { opacity: 1 !important; outline: 3px solid #8B3A62 !important; outline-offset: 2px !important; }
+
+  .gsec { display: none; margin-top: 1.25rem; border-top: 0.5px solid #e8d0d5; padding-top: 1.25rem; }
+
+  .gsec-title { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; font-weight: 500; margin-bottom: 1rem; display: block; }
+
+  .guest-count-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
+  .guest-count-row label { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8B3A62 !important; font-weight: 500; white-space: nowrap; }
+  .gcselect {
+    flex: 1; border: 1px solid #c9a0a8 !important; border-radius: 3px !important;
+    padding: 10px 13px !important; font-family: 'Jost', sans-serif !important;
+    font-size: 14px !important; color: #2a1515 !important; background-color: #ffffff !important;
+    outline: none !important; -webkit-appearance: none !important; appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B3A62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important; background-position: right 12px center !important; padding-right: 32px !important;
+  }
+
+  .guest-fields { display: flex; flex-direction: column; gap: 8px; }
+  .guest-field-row { display: flex; align-items: center; gap: 10px; }
+  .guest-num { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #C0627A; font-weight: 400; min-width: 20px; text-align: right; flex-shrink: 0; }
+
+  .subbtn {
+    display: block !important; width: 100% !important; padding: 13px !important;
+    background: linear-gradient(160deg, #8B3A62 0%, #C0627A 60%, #D4856A 100%) !important;
+    color: #fff5ee !important; border: none !important; border-radius: 3px !important;
+    font-family: 'Jost', sans-serif !important; font-size: 12px !important; letter-spacing: 4px !important;
+    text-transform: uppercase !important; cursor: pointer !important; font-weight: 500 !important; margin-top: 1.25rem !important;
+  }
+  .subbtn:hover { opacity: 0.85 !important; }
+
+  .efooter { text-align: center; padding: 1.25rem 2.5rem; border-top: 0.5px solid #d9c4b0; background: #faf0ea; }
+  .efooter p { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6a3040 !important; margin: 0; font-weight: 400; }
+
+  .sucmsg { display: none; text-align: center; padding: 1.5rem 1rem; }
+  .sucmsg p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: #8B3A62 !important; font-weight: 400; line-height: 1.5; }
+</style>
+
+<div class="ew"><div class="ec">
+
+  <div class="eh">
+    <span class="eo">✦ ✦ ✦</span>
+    <p class="et">You are cordially invited</p>
+    <p class="eb">by</p>
+    <h1 class="ehst">Dr. Camran Nezhat</h1>
+    <p class="etn">to an afternoon gathering of family &amp; friends</p>
+  </div>
+
+  <div class="ebody">
+    <div class="ediv"><div class="edivl"></div><div class="edivd"></div><div class="edivl"></div></div>
+
+    <div class="edet">
+      <div class="db"><span class="dl">Date</span><span class="dv">Saturday<br>June 13, 2026</span></div>
+      <div class="db"><span class="dl">Time</span><span class="dv">3:30 in the afternoon</span></div>
+      <div class="db"><span class="dl">Location</span><span class="dv"><a href="https://maps.google.com/?q=240+Mountain+Wood+Ln+Woodside+CA+94062" target="_blank">240 Mountain Wood Ln<br>Woodside, CA 94062</a></span></div>
+      <div class="db"><span class="dl">RSVP by</span><span class="dv">Thursday<br>June 11, 2026</span></div>
+    </div>
+
+    <div class="emsg"><p>Please join us for an afternoon of good Persian food and warm company.</p></div>
+
+    <div class="calsec">
+      <span class="callbl">Add to your calendar</span>
+      <div class="calrow">
+        <a class="cbtn" href="#" onclick="addToGoogle(event)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B3A62" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Google
+        </a>
+        <a class="cbtn" href="#" onclick="addToiCal(event)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B3A62" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Apple
+        </a>
+        <a class="cbtn" href="#" onclick="addToOutlook(event)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B3A62" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Outlook
+        </a>
+      </div>
+    </div>
+
+    <div class="rsec">
+      <p class="rtitle">Kindly reply</p>
+      <div id="rsvp-form">
+
+        <div class="frow">
+          <label for="fname">Your name</label>
+          <input class="finput" type="text" id="fname" placeholder="Full name" />
+        </div>
+
+        <div class="frow">
+          <label>Will you be attending?</label>
+          <div class="arow">
+            <button class="abtn" id="btn-yes" onclick="selectAttend('yes')">Joyfully accepts</button>
+            <button class="abtn" id="btn-no" onclick="selectAttend('no')">Regretfully declines</button>
+          </div>
+        </div>
+
+        <div id="gsec" class="gsec">
+          <span class="gsec-title">Guest details</span>
+          <div class="guest-count-row">
+            <label for="gcount">How many guests total?</label>
+            <select class="gcselect" id="gcount" onchange="updateGuestFields()">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="guest-fields" id="guest-fields"></div>
+        </div>
+
+        <button class="subbtn" onclick="submitRSVP()">Send my reply</button>
+      </div>
+      <div class="sucmsg" id="sucmsg">
+        <p id="suctext">Thank you — we look forward to seeing you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="efooter">
+    <p>Please reply by Thursday, June 11 &nbsp;·&nbsp; Woodside, California</p>
+  </div>
+
+</div></div>
+
+<script>
+  let attending = null;
+
+  function selectAttend(val) {
+    attending = val;
+    document.getElementById('btn-yes').classList.toggle('active', val === 'yes');
+    document.getElementById('btn-no').classList.toggle('active', val === 'no');
+    document.getElementById('gsec').style.display = val === 'yes' ? 'block' : 'none';
+    if (val === 'no') {
+      document.getElementById('gcount').value = '';
+      document.getElementById('guest-fields').innerHTML = '';
+    }
+  }
+
+  function updateGuestFields() {
+    const count = parseInt(document.getElementById('gcount').value) || 0;
+    const container = document.getElementById('guest-fields');
+    container.innerHTML = '';
+    for (let i = 1; i <= count; i++) {
+      const row = document.createElement('div');
+      row.className = 'guest-field-row';
+      row.innerHTML =
+        '<span class="guest-num">' + i + '.</span>' +
+        '<input class="finput" type="text" id="guest_' + i + '" placeholder="Guest ' + i + ' full name" style="flex:1;" />';
+      container.appendChild(row);
+    }
+  }
+
+  function submitRSVP() {
+    const name = document.getElementById('fname').value.trim();
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!attending) { alert('Please let us know if you\'ll be attending.'); return; }
+
+    let guestNames = [];
+    if (attending === 'yes') {
+      const count = parseInt(document.getElementById('gcount').value) || 0;
+      if (!count) { alert('Please select the number of guests.'); return; }
+      for (let i = 1; i <= count; i++) {
+        const val = document.getElementById('guest_' + i).value.trim();
+        if (!val) { alert('Please enter the name for guest ' + i + '.'); return; }
+        guestNames.push(val);
+      }
+    }
+
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9Pkib8S5p3crPMQSSut80Q5hiwjLjv8PLLA-1grzMoLEneRD3nJgtLILXrJMXy6O1/exec';
+
+    const submission = {
+      timestamp: new Date().toISOString(),
+      primaryName: name,
+      attending: attending,
+      guestCount: guestNames.length,
+      guests: guestNames
+    };
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(submission)
+    }).catch(function(err) { console.error('RSVP send error:', err); });
+
+    document.getElementById('rsvp-form').style.display = 'none';
+    document.getElementById('sucmsg').style.display = 'block';
+    const txt = attending === 'yes'
+      ? 'Thank you, ' + name + '! We look forward to celebrating with you on June 13.'
+      : 'Thank you for letting us know, ' + name + '. You will be missed.';
+    document.getElementById('suctext').textContent = txt;
+  }
+
+  function addToGoogle(e) {
+    e.preventDefault();
+    window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dinner+Gathering+hosted+by+Dr.+Camran+Nezhat&dates=20260613T153000/20260613T203000&details=An+afternoon+gathering+of+family+%26+friends.+Persian+food+and+warm+company.&location=240+Mountain+Wood+Ln,+Woodside,+CA+94062','_blank');
+  }
+  function addToiCal(e) {
+    e.preventDefault();
+    const ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:20260613T153000\r\nDTEND:20260613T203000\r\nSUMMARY:Dinner Gathering hosted by Dr. Camran Nezhat\r\nDESCRIPTION:An afternoon gathering of family & friends.\r\nLOCATION:240 Mountain Wood Ln\\, Woodside\\, CA 94062\r\nEND:VEVENT\r\nEND:VCALENDAR';
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+    a.download = 'nezhat-dinner-june13.ics';
+    a.click();
+  }
+  function addToOutlook(e) {
+    e.preventDefault();
+    window.open('https://outlook.live.com/calendar/0/deeplink/compose?subject=Dinner+Gathering+hosted+by+Dr.+Camran+Nezhat&startdt=2026-06-13T15:30:00&enddt=2026-06-13T20:30:00&body=An+afternoon+gathering+of+family+%26+friends.&location=240+Mountain+Wood+Ln,+Woodside,+CA+94062','_blank');
+  }
+</script>
